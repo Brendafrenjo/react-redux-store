@@ -1,5 +1,19 @@
-
 import "./App.css";
+import { useState, useEffect } from "react";
+import { createStore } from "redux";
+import { Provider, connect, useSelector, useDispatch } from "react-redux";
+
+const countReducer = function (state = 0, action) {
+  switch ((action, type)) {
+    case "ADD":
+      return state + 1;
+    case "SUBTRACT":
+      return state - 1;
+    default:
+      return state;
+  }
+};
+
 
 function App() {
   return (
