@@ -29,13 +29,22 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
+const Component = ({ count, add, subtract }) => {
+  return <h1>Count = {count}</h1>;
+};
+
+const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 function App() {
   return (
     <div className="App">
       <div className="container">
         <div className="react-redux-store">
-          <p>How to setup redux store</p>
+          <Provider store={store}>
+            <Container />
+          </Provider>
+          <button onClick={add}>Add</button>
+          <button onClick={subtract}>Subtract</button>
         </div>
       </div>
     </div>
