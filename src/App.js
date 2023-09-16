@@ -14,6 +14,21 @@ const countReducer = function (state = 0, action) {
   }
 };
 
+const store = createStore(countReducer);
+
+const mapStateToProps = (state) => {
+  return {
+    count: state,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    add: () => dispatch({ type: "ADD" }),
+    subtract: () => dispatch({ type: "SUBTRACT" }),
+  };
+};
+
 
 function App() {
   return (
