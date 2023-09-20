@@ -33,8 +33,8 @@ const Component = ({ count, add, subtract }) => {
   return (
     <div>
       <h1>Count = {count}</h1>
-      <button onClick={add}>Add</button>
-      <button onClick={subtract}>Subtract</button>
+      <button onClick={add} className="btn btn-danger">Add</button>
+      <button onClick={subtract} className="btn btn-info">Subtract</button>
     </div>
   );
 };
